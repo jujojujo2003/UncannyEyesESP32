@@ -1,5 +1,9 @@
 # UncannyEyesESP32
-This is a performant redo of Adafruit https://github.com/adafruit/Uncanny_Eyes  for  ESP32 using default Adafruit_GFX library. 
+This is a ESP32 compatible redo of Adafruit https://github.com/adafruit/Uncanny_Eyes  for  ESP32 using default Adafruit_GFX library. 
+
+
+https://github.com/jujojujo2003/UncannyEyesESP32/assets/1708406/8bf5ff73-4136-44c4-a586-412c8c9cfc50
+
 
 ## Components used
 * 2 x [128x128 RGB565 16-bit SSD1351 OLED display](https://www.amazon.com/1-5inch-Interface-Raspberry-Examples-Provided/dp/B07D9NVJPZ)
@@ -14,8 +18,8 @@ ESP32 has 2 SPI buses called VSPI and HSPI. Connect the 2  displays to them. (DI
 |   | DIN | CLK  | CS | DC | RST  |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Left Display | 13 | 14  | 27 | 26  | 25|
-| Right Display | 23 | 18  | 22 | 20  | 21|
+| Right Display | 23 | 18  | 0 | 17  | 16|
 
 ## Notes
 * I was able to drive the display  at SPI_FREQUENCY 30000000 and  gave consistent 30FPS driving 2 displays with 1 ESP32 or at 60 FPS for 1 display on 1 ESP32 (you can also try assiging 1 core each to the displays on dual core ESP32 for higher performance) . Try lowering this frequency if the display looks corrupted
-* You can change the asset data.h to any RGB565 image. Just make sure you maintain the dimentions of the image
+* You can change the asset data.h to any RGB565 image. Just make sure you maintain the dimentions of the image. Refer data.h on tools to convert 
